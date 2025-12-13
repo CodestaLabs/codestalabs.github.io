@@ -1,11 +1,9 @@
 :root{
-  --bg-main:#EDF1F5;      /* mobilde fazla mavi yok */
-  --bg-surface:#E5E7EB;   /* navbar GRİ */
+  --bg-main:#F1F3F6;      /* mobil + desktop aynı */
+  --bg-surface:#E3E6EA;   /* navbar net gri */
   --text-primary:#0F172A;
   --text-secondary:#475569;
   --accent:#2563EB;
-
-  --m:24px; --l:40px; --xl:64px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -19,7 +17,7 @@ body{
 .container{
   max-width:1200px;
   margin:auto;
-  padding:var(--m);
+  padding:24px;
 }
 
 /* HEADER */
@@ -31,27 +29,34 @@ body{
 .navbar{
   display:flex;
   align-items:center;
-  gap:16px;
+  justify-content:space-between;
 }
 
+/* LEFT */
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* LOGO */
 .logo{
   font-weight:800;
-  font-size:1.2rem;
+  font-size:1.5rem;   /* desktop büyük */
 }
 
-/* NAV */
-.nav-links{
+/* CENTER */
+.nav-center{
   display:flex;
   gap:40px;
-  margin-left:auto;
 }
 
-.nav-links a{
+.nav-center a{
   color:var(--text-secondary);
   position:relative;
 }
 
-.nav-links a::after{
+.nav-center a::after{
   content:"";
   position:absolute;
   left:0;
@@ -62,17 +67,17 @@ body{
   transition:.2s;
 }
 
-.nav-links a:hover,
-.nav-links a.active{
+.nav-center a:hover,
+.nav-center a.active{
   color:var(--text-primary);
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after{
+.nav-center a:hover::after,
+.nav-center a.active::after{
   width:100%;
 }
 
-/* BUTTON */
+/* CTA */
 .btn{
   padding:10px 18px;
   border-radius:10px;
@@ -90,7 +95,7 @@ body{
   color:#fff;
 }
 
-/* HAMBURGER – klasik */
+/* HAMBURGER */
 .hamburger{
   display:none;
   background:none;
@@ -100,7 +105,7 @@ body{
 
 .hamburger span{
   display:block;
-  width:24px;
+  width:26px;
   height:2px;
   background:#111;
   margin:5px 0;
@@ -119,7 +124,7 @@ body{
 }
 
 /* CONTENT */
-.hero{padding:var(--xl) 0}
+.hero{padding:64px 0}
 
 .hero h1{
   font-size:3rem;
@@ -133,7 +138,7 @@ body{
   margin-bottom:40px;
 }
 
-.section{padding:var(--xl) 0}
+.section{padding:64px 0}
 
 .packages{overflow-x:auto}
 .track{display:flex;gap:24px}
@@ -157,10 +162,16 @@ body{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .nav-links{display:none}
-  .cta{display:none}
-  .hamburger{display:block}
-  .logo{margin-right:auto}
+  .nav-center{display:none}
+  .nav-right{display:none}
 
-  .mobile-menu.open{display:flex}
+  .hamburger{display:block}
+
+  .logo{
+    font-size:1.3rem; /* mobil dengeli */
+  }
+
+  .mobile-menu.open{
+    display:flex;
+  }
 }
