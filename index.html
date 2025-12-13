@@ -1,255 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodestaLabs — Web & AI Studio</title>
-
-  <style>
-    /* ===== ROOT VARIABLES ===== */
-    :root {
-      --bg-main: #0E0E11;
-      --bg-surface: #1C1F26;
-      --text-primary: #F4F6F8;
-      --text-secondary: #A1A1AA;
-      --accent: #4F8CFF;
-
-      --space-xs: 8px;
-      --space-s: 16px;
-      --space-m: 24px;
-      --space-l: 40px;
-      --space-xl: 64px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-main);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== NAVBAR ===== */
-    header {
-      position: sticky;
-      top: 0;
-      background: var(--bg-surface);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      z-index: 100;
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: var(--space-s) var(--space-m);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    nav {
-      display: flex;
-      gap: var(--space-l);
-    }
-
-    nav a {
-      position: relative;
-      padding: 6px 0;
-      color: var(--text-secondary);
-      transition: color 0.3s ease;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0%;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--text-primary);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .btn-primary {
-      position: relative;
-      padding: 10px 20px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      overflow: hidden;
-      transition: color 0.3s ease;
-    }
-
-    .btn-primary::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-      z-index: -1;
-    }
-
-    .btn-primary:hover {
-      color: #fff;
-    }
-
-    .btn-primary:hover::before {
-      transform: scaleX(1);
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: var(--space-xl) var(--space-m);
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      max-width: 800px;
-      margin-bottom: var(--space-m);
-    }
-
-    .hero p {
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin-bottom: var(--space-l);
-    }
-
-    /* ===== PACKAGES ===== */
-    .packages {
-      padding: var(--space-xl) 0;
-      overflow-x: auto;
-    }
-
-    .package-track {
-      display: flex;
-      gap: var(--space-m);
-      padding: 0 var(--space-m);
-      min-width: max-content;
-    }
-
-    .package-card {
-      background: var(--bg-surface);
-      border-radius: 12px;
-      padding: var(--space-l);
-      width: 300px;
-      flex-shrink: 0;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .package-card h3 {
-      margin-bottom: var(--space-s);
-    }
-
-    .package-card p {
-      color: var(--text-secondary);
-      margin-bottom: var(--space-m);
-    }
-
-    .price {
-      font-size: 1.4rem;
-      margin-bottom: var(--space-s);
-    }
-
-    .duration {
-      color: var(--text-secondary);
-      margin-bottom: var(--space-m);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-  <div class="navbar">
+  <div class="container navbar">
     <div class="logo">CodestaLabs</div>
-
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Solutions</a>
-      <a href="#">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="contact.html">Contact</a>
     </nav>
-
-    <a href="#" class="btn-primary">Get Started</a>
+    <a class="btn" href="solutions.html">Get Started</a>
   </div>
 </header>
 
-<section class="hero">
-  <h1>We build web applications that actually work.</h1>
-  <p>
-    CodestaLabs is a web & AI studio focused on building scalable,
-    product-driven web applications — from MVPs to advanced platforms.
-  </p>
-
-  <a href="#" class="btn-primary">View Solutions</a>
-</section>
-
-<section class="packages">
-  <div class="package-track">
-
-    <div class="package-card">
-      <h3>Basic</h3>
-      <p>Starter web application for MVPs and small businesses.</p>
-      <div class="price">€490</div>
-      <div class="duration">10–14 days</div>
-      <a href="#" class="btn-primary">Details</a>
-    </div>
-
-    <div class="package-card">
-      <h3>Standard</h3>
-      <p>Smart business web application with AI features.</p>
-      <div class="price">€2,400</div>
-      <div class="duration">20–25 days</div>
-      <a href="#" class="btn-primary">Details</a>
-    </div>
-
-    <div class="package-card">
-      <h3>Premium</h3>
-      <p>Advanced AI-powered web platform.</p>
-      <div class="price">€4,900</div>
-      <div class="duration">35–40 days</div>
-      <a href="#" class="btn-primary">Details</a>
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
-
-</footer>
+<main class="container">
+  <section class="hero">
+    <h1>We build web applications that actually work.</h1>
+    <p>
+      CodestaLabs is a web & AI studio building scalable, product-driven
+      web applications — from MVPs to advanced AI-powered platforms.
+    </p>
+    <a class="btn" href="solutions.html">View Solutions</a>
+  </section>
+</main>
 
 </body>
 </html>
