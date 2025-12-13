@@ -1,65 +1,296 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodestaLabs — Web & AI Studio</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111827" />
+  <title>CodestaLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
+  <!-- Mobile Drawer Backdrop -->
+  <div class="backdrop" id="backdrop" hidden></div>
 
-<header class="site-header">
-  <div class="container navbar">
+  <!-- Mobile Drawer -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__top">
+      <a class="drawer__brand" href="#top" aria-label="CodestaLab ana sayfa">
+        <img class="drawer__logo" src="./assets/logo.svg" alt="CodestaLab Logo" />
+        <span class="drawer__name">CodestaLab</span>
+      </a>
 
-    <!-- LEFT -->
-    <div class="nav-left">
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button class="icon-btn" id="drawerClose" aria-label="Menüyü kapat">
+        <span class="icon-x" aria-hidden="true"></span>
       </button>
-      <a class="logo" href="index.html">CodestaLabs</a>
     </div>
 
-    <!-- CENTER (desktop) -->
-    <nav class="nav-center">
-      <a href="index.html" class="active">Home</a>
-      <a href="solutions.html">Solutions</a>
+    <nav class="drawer__nav" aria-label="Mobil Menü">
+      <a class="navlink" href="#services">Hizmetler</a>
+      <a class="navlink" href="#work">Projeler</a>
+      <a class="navlink" href="#pricing">Paketler</a>
+      <a class="navlink" href="#faq">SSS</a>
+      <a class="navlink navlink--cta" href="#contact">İletişim</a>
     </nav>
 
-    <!-- RIGHT -->
-    <div class="nav-right">
-      <a class="btn cta" href="contact.html">Contact</a>
+    <div class="drawer__footer">
+      <p class="muted">Hızlı, modern, satış odaklı web siteleri.</p>
     </div>
+  </aside>
 
-  </div>
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container">
+      <div class="header__bar">
+        <a class="brand" href="#top" aria-label="CodestaLab ana sayfa">
+          <img class="brand__logo" src="./assets/logo.svg" alt="CodestaLab Logo" />
+          <span class="brand__name">CodestaLab</span>
+        </a>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="contact.html" class="cta">Contact</a>
-  </div>
-</header>
+        <nav class="nav" aria-label="Ana Menü">
+          <a class="nav__link" href="#services">Hizmetler</a>
+          <a class="nav__link" href="#work">Projeler</a>
+          <a class="nav__link" href="#pricing">Paketler</a>
+          <a class="nav__link" href="#faq">SSS</a>
+          <a class="btn btn--primary" href="#contact">Teklif Al</a>
+        </nav>
 
-<main class="container">
-  <section class="hero">
-    <h1>We build web applications that actually work.</h1>
-    <p>
-      CodestaLabs is a web & AI studio building scalable, product-driven
-      web applications — from MVPs to advanced AI platforms.
-    </p>
-    <a class="btn" href="solutions.html">View Solutions</a>
-  </section>
-</main>
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" id="hamburger"
+                aria-label="Menüyü aç"
+                aria-controls="drawer"
+                aria-expanded="false">
+          <span class="hamburger__lines" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<script>
-  const burger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".mobile-menu");
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__left">
+          <div class="pill">⚡ Performans • UI/UX • SEO</div>
+          <h1 class="hero__title">
+            Satış odaklı, hızlı ve premium
+            <span class="grad">web siteleri</span>
+          </h1>
+          <p class="hero__desc">
+            CodestaLab ile markana yakışan modern tasarım + temiz kod + yüksek hız.
+            Mobilde de desktop’ta da kusursuz görünüm.
+          </p>
 
-  burger.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
-</script>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Hemen Başlayalım</a>
+            <a class="btn btn--ghost" href="#work">Örnekleri Gör</a>
+          </div>
 
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__n">90+</div>
+              <div class="stat__t">Lighthouse hedef</div>
+            </div>
+            <div class="stat">
+              <div class="stat__n">3–7 gün</div>
+              <div class="stat__t">Teslim süresi</div>
+            </div>
+            <div class="stat">
+              <div class="stat__n">0</div>
+              <div class="stat__t">Gereksiz şişkinlik</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <div class="card card--glow">
+            <div class="card__top">
+              <div class="dot dot--r"></div>
+              <div class="dot dot--y"></div>
+              <div class="dot dot--g"></div>
+              <span class="card__title">Preview</span>
+            </div>
+
+            <div class="preview">
+              <div class="preview__block">
+                <div class="skel skel--title"></div>
+                <div class="skel skel--line"></div>
+                <div class="skel skel--line"></div>
+                <div class="skel skel--btn"></div>
+              </div>
+              <div class="preview__grid">
+                <div class="mini"></div>
+                <div class="mini"></div>
+                <div class="mini"></div>
+              </div>
+            </div>
+
+            <div class="card__bottom">
+              <span class="badge">Responsive</span>
+              <span class="badge">SEO Ready</span>
+              <span class="badge">Fast</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>Hizmetler</h2>
+          <p class="muted">İşi şansa bırakmıyoruz: tasarım + hız + dönüşüm.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <h3>UI/UX Tasarım</h3>
+            <p class="muted">Temiz, modern, premium görünüm. Mobil öncelikli.</p>
+          </article>
+          <article class="card">
+            <h3>Performans</h3>
+            <p class="muted">Şişkin kütüphane yok. Hız ve stabilite odaklı.</p>
+          </article>
+          <article class="card">
+            <h3>SEO & İçerik</h3>
+            <p class="muted">Temel SEO, semantik HTML, hızlı yükleme.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section__head">
+          <h2>Projeler</h2>
+          <p class="muted">Vitrin örneği (burayı sonra gerçek işlerle doldurursun).</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card card--media">
+            <div class="media"></div>
+            <div class="card__pad">
+              <h3>Kurumsal Landing</h3>
+              <p class="muted">Tek sayfa satış odaklı akış.</p>
+            </div>
+          </div>
+          <div class="card card--media">
+            <div class="media"></div>
+            <div class="card__pad">
+              <h3>Ürün / SaaS</h3>
+              <p class="muted">Paketler, SSS, CTA odaklı.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <h2>Paketler</h2>
+          <p class="muted">Net, anlaşılır, hızlı karar.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>Starter</h3>
+            <p class="price">₺ —</p>
+            <ul class="list">
+              <li>1 sayfa landing</li>
+              <li>Responsive</li>
+              <li>Temel SEO</li>
+            </ul>
+            <a class="btn btn--ghost wfull" href="#contact">Sor</a>
+          </div>
+
+          <div class="card card--focus">
+            <h3>Pro</h3>
+            <p class="price">₺ —</p>
+            <ul class="list">
+              <li>3-5 sayfa</li>
+              <li>Performans odaklı</li>
+              <li>İletişim / Form</li>
+            </ul>
+            <a class="btn btn--primary wfull" href="#contact">Teklif Al</a>
+          </div>
+
+          <div class="card">
+            <h3>Custom</h3>
+            <p class="price">₺ —</p>
+            <ul class="list">
+              <li>Özel tasarım</li>
+              <li>İleri animasyonlar</li>
+              <li>AI chatbot opsiyon</li>
+            </ul>
+            <a class="btn btn--ghost wfull" href="#contact">Konuşalım</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2>SSS</h2>
+          <p class="muted">Kısa ve net.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Mobilde niye mavi görünüyor oluyordu?</summary>
+            <p class="muted">Genelde background / overlay renkleri ve “tint” veren gradient’lerden olur. Bu sürümde nötr gri palet ve sabit arka plan var.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Hamburger menü soldan açılıyor mu?</summary>
+            <p class="muted">Evet, soldan drawer olarak açılır. Backdrop’a basınca da kapanır.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Navbar net gri mi?</summary>
+            <p class="muted">Evet. Navbar arka planı #111827 / çizgi #1f2937, hover’lar gri tonları.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact">
+          <div>
+            <h2>İletişim</h2>
+            <p class="muted">Proje detayını yaz, sana net bir plan çıkaralım.</p>
+          </div>
+          <form class="form" onsubmit="return false">
+            <input class="input" type="text" placeholder="İsim" />
+            <input class="input" type="email" placeholder="E-posta" />
+            <textarea class="input" rows="4" placeholder="Kısaca proje..."></textarea>
+            <button class="btn btn--primary" type="button">Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bar">
+      <span class="muted">© <span id="year"></span> CodestaLab</span>
+      <div class="footer__links">
+        <a class="muted" href="#top">Yukarı</a>
+        <a class="muted" href="#contact">İletişim</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
 </body>
 </html>
