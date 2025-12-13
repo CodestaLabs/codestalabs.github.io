@@ -12,9 +12,11 @@
 <header class="site-header">
   <div class="container navbar">
 
-    <!-- Hamburger (mobilde SOLDA) -->
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <!-- Hamburger (mobil - klasik 3 çizgi) -->
+    <button class="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <!-- Logo -->
@@ -55,10 +57,6 @@
 
   burger.addEventListener("click", () => {
     menu.classList.toggle("open");
-    burger.setAttribute(
-      "aria-expanded",
-      menu.classList.contains("open")
-    );
   });
 </script>
 
