@@ -9,9 +9,14 @@
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <div class="container navbar">
-    <div class="logo">CodestaLabs</div>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="logo" href="index.html">CodestaLabs</a>
 
     <nav class="nav-links">
       <a href="index.html">Home</a>
@@ -19,16 +24,12 @@
     </nav>
 
     <a class="btn cta" href="contact.html">Contact</a>
-
-    <button class="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 
   <div class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
-    <a class="cta" href="contact.html">Contact</a>
+    <a href="contact.html" class="cta">Contact</a>
   </div>
 </header>
 
@@ -51,6 +52,10 @@
 
   burger.addEventListener("click", () => {
     menu.classList.toggle("open");
+    burger.setAttribute(
+      "aria-expanded",
+      menu.classList.contains("open")
+    );
   });
 </script>
 
