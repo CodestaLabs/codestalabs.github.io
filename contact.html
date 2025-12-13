@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — CodestaLabs</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container navbar">
 
-    <button class="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-left">
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="logo" href="index.html">CodestaLabs</a>
+    </div>
 
-    <a class="logo" href="index.html">CodestaLabs</a>
-
-    <nav class="nav-links">
+    <nav class="nav-center">
       <a href="index.html">Home</a>
       <a href="solutions.html">Solutions</a>
     </nav>
 
-    <a class="btn cta" href="contact.html">Contact</a>
+    <div class="nav-right">
+      <a class="btn cta" href="contact.html">Contact</a>
+    </div>
+
   </div>
 
   <div class="mobile-menu">
@@ -38,8 +42,8 @@
     <h2>Let’s talk</h2>
 
     <form class="form">
-      <input type="text" placeholder="Your name" />
-      <input type="email" placeholder="Your email" />
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Your email">
       <textarea rows="4" placeholder="Tell us about your project"></textarea>
       <button class="btn" type="submit">Send</button>
     </form>
@@ -49,10 +53,7 @@
 <script>
   const burger = document.querySelector(".hamburger");
   const menu = document.querySelector(".mobile-menu");
-
-  burger.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
+  burger.addEventListener("click", () => menu.classList.toggle("open"));
 </script>
 
 </body>
