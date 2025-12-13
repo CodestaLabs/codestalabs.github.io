@@ -12,7 +12,7 @@
 <header class="site-header">
   <div class="container navbar">
 
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+    <button class="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
 
@@ -52,12 +52,9 @@
 
   burger.addEventListener("click", () => {
     menu.classList.toggle("open");
-    burger.setAttribute(
-      "aria-expanded",
-      menu.classList.contains("open")
-    );
   });
 </script>
 
 </body>
 </html>
+
