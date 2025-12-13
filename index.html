@@ -2,198 +2,253 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CodestaLabs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodestaLabs — Web & AI Studio</title>
 
   <style>
+    /* ===== ROOT VARIABLES ===== */
     :root {
-      --black:#000;
-      --text:#0f172a;
-      --muted:#475569;
-      --border:#e2e8f0;
-      --bg:#ffffff;
+      --bg-main: #0E0E11;
+      --bg-surface: #1C1F26;
+      --text-primary: #F4F6F8;
+      --text-secondary: #A1A1AA;
+      --accent: #4F8CFF;
+
+      --space-xs: 8px;
+      --space-s: 16px;
+      --space-m: 24px;
+      --space-l: 40px;
+      --space-xl: 64px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* ===== HEADER ===== */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 28px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 18px;
-    }
-
-    .logo {
-      width: 36px;
-      height: 36px;
-      border: 2px solid var(--black);
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .nav a {
-      font-size: 14px;
-      padding: 10px 16px;
-      border-radius: 999px;
-    }
-
-    .nav .cta {
-      background: var(--black);
-      color: #fff;
-      border: 1px solid var(--black);
-    }
-
-    /* ===== MAIN ===== */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    .hero {
-      max-width: 720px;
-      margin-bottom: 56px;
-    }
-
-    .hero h1 {
-      font-size: 46px;
-      line-height: 1.1;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--muted);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-primary);
       line-height: 1.6;
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--muted);
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        gap: 16px;
-      }
+    /* ===== NAVBAR ===== */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--bg-surface);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      z-index: 100;
+    }
 
-      .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: var(--space-s) var(--space-m);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      .hero h1 {
-        font-size: 36px;
+    .logo {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: var(--space-l);
+    }
+
+    nav a {
+      position: relative;
+      padding: 6px 0;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn-primary {
+      position: relative;
+      padding: 10px 20px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      overflow: hidden;
+      transition: color 0.3s ease;
+    }
+
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn-primary:hover {
+      color: #fff;
+    }
+
+    .btn-primary:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: var(--space-xl) var(--space-m);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      max-width: 800px;
+      margin-bottom: var(--space-m);
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: var(--space-l);
+    }
+
+    /* ===== PACKAGES ===== */
+    .packages {
+      padding: var(--space-xl) 0;
+      overflow-x: auto;
+    }
+
+    .package-track {
+      display: flex;
+      gap: var(--space-m);
+      padding: 0 var(--space-m);
+      min-width: max-content;
+    }
+
+    .package-card {
+      background: var(--bg-surface);
+      border-radius: 12px;
+      padding: var(--space-l);
+      width: 300px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .package-card h3 {
+      margin-bottom: var(--space-s);
+    }
+
+    .package-card p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-m);
+    }
+
+    .price {
+      font-size: 1.4rem;
+      margin-bottom: var(--space-s);
+    }
+
+    .duration {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-m);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="brand">
-    <div class="logo">CL</div>
-    CodestaLabs
-  </div>
+  <div class="navbar">
+    <div class="logo">CodestaLabs</div>
 
-  <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/solutions.html">Solutions</a>
-    <a class="cta" href="/contact.html">Contact</a>
-  </nav>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Solutions</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <a href="#" class="btn-primary">Get Started</a>
+  </div>
 </header>
 
-<main>
-  <section class="hero">
-    <h1>From modern websites to AI-powered platforms</h1>
-    <p>
-      We build scalable websites and intelligent chatbot solutions — from simple business sites to fully custom AI-powered web applications.
-    </p>
-  </section>
+<section class="hero">
+  <h1>We build web applications that actually work.</h1>
+  <p>
+    CodestaLabs is a web & AI studio focused on building scalable,
+    product-driven web applications — from MVPs to advanced platforms.
+  </p>
 
-  <section class="services">
-    <div class="card">
-      <h3>Starter Website</h3>
-      <p>
-        Clean, responsive websites with modern design — perfect for fast and professional online presence.
-      </p>
+  <a href="#" class="btn-primary">View Solutions</a>
+</section>
+
+<section class="packages">
+  <div class="package-track">
+
+    <div class="package-card">
+      <h3>Basic</h3>
+      <p>Starter web application for MVPs and small businesses.</p>
+      <div class="price">€490</div>
+      <div class="duration">10–14 days</div>
+      <a href="#" class="btn-primary">Details</a>
     </div>
 
-    <div class="card">
-      <h3>Smart Website + Chatbot</h3>
-      <p>
-        Interactive websites with AI chatbot integration to automate communication and improve user experience.
-      </p>
+    <div class="package-card">
+      <h3>Standard</h3>
+      <p>Smart business web application with AI features.</p>
+      <div class="price">€2,400</div>
+      <div class="duration">20–25 days</div>
+      <a href="#" class="btn-primary">Details</a>
     </div>
 
-    <div class="card">
-      <h3>AI-Powered Web Platform</h3>
-      <p>
-        Fully custom web applications with backend logic, AI model integration, automation and scalability.
-      </p>
+    <div class="package-card">
+      <h3>Premium</h3>
+      <p>Advanced AI-powered web platform.</p>
+      <div class="price">€4,900</div>
+      <div class="duration">35–40 days</div>
+      <a href="#" class="btn-primary">Details</a>
     </div>
-  </section>
-</main>
 
-<footer>
-  © CodestaLabs — Web & AI Solutions
+  </div>
+</section>
+
+</body>
+</html>
+
 </footer>
 
 </body>
