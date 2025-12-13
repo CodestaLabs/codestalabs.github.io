@@ -9,26 +9,27 @@
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <div class="container navbar">
-    <div class="logo">CodestaLabs</div>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="logo" href="index.html">CodestaLabs</a>
 
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="solutions.html">Solutions</a>
+      <a href="solutions.html" class="active">Solutions</a>
     </nav>
 
     <a class="btn cta" href="contact.html">Contact</a>
-
-    <button class="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 
   <div class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
-    <a class="cta" href="contact.html">Contact</a>
+    <a href="contact.html" class="cta">Contact</a>
   </div>
 </header>
 
@@ -42,7 +43,7 @@
 
         <div class="card">
           <h3>Basic</h3>
-          <p>Starter web application for MVPs and small businesses.</p>
+          <p>Clean and scalable web application for MVPs.</p>
           <div class="price">€490</div>
           <div class="muted">10–14 days</div>
           <a class="btn" href="contact.html">Details</a>
@@ -50,7 +51,7 @@
 
         <div class="card">
           <h3>Standard</h3>
-          <p>Smart business web application with AI and automation.</p>
+          <p>Business-ready web app with automation & AI features.</p>
           <div class="price">€2,400</div>
           <div class="muted">20–25 days</div>
           <a class="btn" href="contact.html">Details</a>
@@ -58,7 +59,7 @@
 
         <div class="card">
           <h3>Premium</h3>
-          <p>Advanced AI-powered web platform and custom solutions.</p>
+          <p>Advanced AI-powered platform & custom architecture.</p>
           <div class="price">€4,900</div>
           <div class="muted">35–40 days</div>
           <a class="btn" href="contact.html">Details</a>
@@ -71,7 +72,7 @@
   <section class="section">
     <h2>Advanced AI Solutions</h2>
     <p class="muted">
-      AI Business Automation · Internal AI Tools · AI Integrations · AI Consulting
+      AI Automation · Internal Tools · AI Integration · Consulting
     </p>
   </section>
 
@@ -83,9 +84,12 @@
 
   burger.addEventListener("click", () => {
     menu.classList.toggle("open");
+    burger.setAttribute(
+      "aria-expanded",
+      menu.classList.contains("open")
+    );
   });
 </script>
 
 </body>
 </html>
-
