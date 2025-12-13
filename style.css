@@ -1,0 +1,69 @@
+:root{
+  --bg-main:#0E0E11; --bg-surface:#1C1F26;
+  --text-primary:#F4F6F8; --text-secondary:#A1A1AA;
+  --accent:#4F8CFF;
+  --xs:8px; --s:16px; --m:24px; --l:40px; --xl:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg-main); color:var(--text-primary); line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:auto;padding:var(--m)}
+header{
+  position:sticky;top:0;z-index:100;
+  background:var(--bg-surface);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+.navbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--m)
+}
+.logo{font-weight:600}
+nav{display:flex;avoid-wrap:true;gap:var(--l)}
+nav a{color:var(--text-secondary);position:relative;padding:6px 0}
+nav a::after{
+  content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;
+  background:var(--accent);transition:.3s
+}
+nav a:hover{color:var(--text-primary)}
+nav a:hover::after{width:100%}
+.btn{
+  position:relative;display:inline-block;
+  padding:10px 20px;border:1px solid var(--accent);
+  color:var(--accent);overflow:hidden
+}
+.btn::before{
+  content:"";position:absolute;inset:0;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:.3s;z-index:-1
+}
+.btn:hover{color:#fff}
+.btn:hover::before{transform:scaleX(1)}
+.hero{padding:var(--xl) 0}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);max-width:800px;margin-bottom:var(--m)}
+.hero p{color:var(--text-secondary);max-width:620px;margin-bottom:var(--l)}
+.section{padding:var(--xl) 0}
+.section h2{margin-bottom:var(--m)}
+.packages{overflow-x:auto}
+.track{display:flex;gap:var(--m);min-width:max-content}
+.card{
+  background:var(--bg-surface);border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;padding:var(--l);width:300px;flex-shrink:0
+}
+.card p{color:var(--text-secondary);margin:var(--s) 0}
+.price{font-size:1.4rem;margin:var(--s) 0}
+.muted{color:var(--text-secondary)}
+.form{
+  max-width:520px;background:var(--bg-surface);
+  border:1px solid rgba(255,255,255,.06);border-radius:12px;
+  padding:var(--l)
+}
+.form input,.form textarea{
+  width:100%;margin-bottom:var(--s);padding:10px;
+  background:#0b0b10;border:1px solid rgba(255,255,255,.12);
+  color:var(--text-primary)
+}
+@media(max-width:768px){
+  nav{display:none}
+}
