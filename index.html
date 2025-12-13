@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodestaLabs — Web & AI Studio</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container navbar">
 
-    <!-- Hamburger (mobil - klasik 3 çizgi) -->
-    <button class="hamburger" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- LEFT -->
+    <div class="nav-left">
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="logo" href="index.html">CodestaLabs</a>
+    </div>
 
-    <!-- Logo -->
-    <a class="logo" href="index.html">CodestaLabs</a>
-
-    <!-- Desktop nav -->
-    <nav class="nav-links">
+    <!-- CENTER (desktop) -->
+    <nav class="nav-center">
       <a href="index.html" class="active">Home</a>
       <a href="solutions.html">Solutions</a>
     </nav>
 
-    <!-- CTA -->
-    <a class="btn cta" href="contact.html">Contact</a>
+    <!-- RIGHT -->
+    <div class="nav-right">
+      <a class="btn cta" href="contact.html">Contact</a>
+    </div>
+
   </div>
 
-  <!-- Mobile menu -->
+  <!-- MOBILE MENU -->
   <div class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
@@ -45,7 +46,7 @@
     <h1>We build web applications that actually work.</h1>
     <p>
       CodestaLabs is a web & AI studio building scalable, product-driven
-      web applications — from MVPs to advanced AI-powered platforms.
+      web applications — from MVPs to advanced AI platforms.
     </p>
     <a class="btn" href="solutions.html">View Solutions</a>
   </section>
