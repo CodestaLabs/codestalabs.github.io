@@ -3,33 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions — CodestaLabs</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Solutions – CodestaLabs</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site-header">
+<header class="header">
   <div class="container navbar">
 
+    <!-- LEFT -->
     <div class="nav-left">
-      <button class="hamburger" aria-label="Menu">
+      <button class="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-      <a class="logo" href="index.html">CodestaLabs</a>
+      <span class="logo">CodestaLabs</span>
     </div>
 
+    <!-- CENTER -->
     <nav class="nav-center">
       <a href="index.html">Home</a>
-      <a href="solutions.html" class="active">Solutions</a>
+      <a href="solutions.html">Solutions</a>
     </nav>
 
+    <!-- RIGHT -->
     <div class="nav-right">
-      <a class="btn cta" href="contact.html">Contact</a>
+      <a href="contact.html" class="cta">Contact</a>
     </div>
 
   </div>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
@@ -38,42 +41,51 @@
 </header>
 
 <main class="container">
+
+  <section class="hero">
+    <h1>Our Solutions</h1>
+    <p>
+      We design and develop scalable web applications,
+      from simple MVPs to advanced AI-powered platforms.
+    </p>
+  </section>
+
   <section class="section">
-    <h2>Web Application Packages</h2>
+    <div class="track">
 
-    <div class="packages">
-      <div class="track">
-
-        <div class="card">
-          <h3>Basic</h3>
-          <p>Clean and scalable web application for MVPs.</p>
-          <div class="price">€490</div>
-          <div class="muted">10–14 days</div>
-        </div>
-
-        <div class="card">
-          <h3>Standard</h3>
-          <p>Business web app with automation & AI features.</p>
-          <div class="price">€2,400</div>
-          <div class="muted">20–25 days</div>
-        </div>
-
-        <div class="card">
-          <h3>Premium</h3>
-          <p>Advanced AI-powered custom platform.</p>
-          <div class="price">€4,900</div>
-          <div class="muted">35–40 days</div>
-        </div>
-
+      <div class="card">
+        <h3>Basic</h3>
+        <p>Landing page or simple web application.</p>
+        <div class="price">€490</div>
+        <p class="muted">Clean UI · Responsive · Fast delivery</p>
       </div>
+
+      <div class="card">
+        <h3>Standard</h3>
+        <p>Business-focused web application.</p>
+        <div class="price">€2,400</div>
+        <p class="muted">Dashboard · Automation · Scalable</p>
+      </div>
+
+      <div class="card">
+        <h3>Premium</h3>
+        <p>Advanced AI-powered custom platform.</p>
+        <div class="price">€4,900</div>
+        <p class="muted">AI · Custom architecture · High performance</p>
+      </div>
+
     </div>
   </section>
+
 </main>
 
 <script>
-  const burger = document.querySelector(".hamburger");
-  const menu = document.querySelector(".mobile-menu");
-  burger.addEventListener("click", () => menu.classList.toggle("open"));
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+  });
 </script>
 
 </body>
