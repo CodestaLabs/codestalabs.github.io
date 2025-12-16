@@ -11,28 +11,24 @@
 <header class="header">
   <div class="container navbar">
 
-    <!-- LEFT -->
     <div class="nav-left">
-      <button class="hamburger" aria-label="Open menu">
+      <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <span class="logo">CodestaLabs</span>
     </div>
 
-    <!-- CENTER -->
     <nav class="nav-center">
       <a href="index.html">Home</a>
       <a href="solutions.html">Solutions</a>
     </nav>
 
-    <!-- RIGHT -->
     <div class="nav-right">
       <a href="contact.html" class="cta">Contact</a>
     </div>
 
   </div>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
@@ -41,29 +37,24 @@
 </header>
 
 <main class="container">
-
   <section class="hero">
-    <h1>Let’s talk</h1>
-    <p>
-      Tell us about your project and we’ll get back to you.
-    </p>
+    <h1>Contact Us</h1>
+    <p>Tell us about your project.</p>
   </section>
 
   <section class="section">
     <form class="form">
       <input type="text" placeholder="Your name">
       <input type="email" placeholder="Your email">
-      <textarea rows="5" placeholder="Describe your project"></textarea>
-      <button class="cta" type="submit">Send message</button>
+      <textarea rows="5" placeholder="Project details"></textarea>
+      <button class="cta" type="submit">Send</button>
     </form>
   </section>
-
 </main>
 
 <script>
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-menu");
-
   hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("open");
   });
@@ -71,3 +62,4 @@
 
 </body>
 </html>
+
