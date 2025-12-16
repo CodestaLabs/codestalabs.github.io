@@ -11,28 +11,24 @@
 <header class="header">
   <div class="container navbar">
 
-    <!-- LEFT -->
     <div class="nav-left">
-      <button class="hamburger" aria-label="Open menu">
+      <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <span class="logo">CodestaLabs</span>
     </div>
 
-    <!-- CENTER -->
     <nav class="nav-center">
       <a href="index.html">Home</a>
       <a href="solutions.html">Solutions</a>
     </nav>
 
-    <!-- RIGHT -->
     <div class="nav-right">
       <a href="contact.html" class="cta">Contact</a>
     </div>
 
   </div>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu">
     <a href="index.html">Home</a>
     <a href="solutions.html">Solutions</a>
@@ -41,48 +37,37 @@
 </header>
 
 <main class="container">
-
   <section class="hero">
     <h1>Our Solutions</h1>
     <p>
-      We design and develop scalable web applications,
-      from simple MVPs to advanced AI-powered platforms.
+      From MVPs to advanced AI-powered web applications.
     </p>
   </section>
 
-  <section class="section">
-    <div class="track">
+  <section class="section track">
+    <div class="card">
+      <h3>Basic</h3>
+      <p>Simple landing page or web app.</p>
+      <div class="price">€490</div>
+    </div>
 
-      <div class="card">
-        <h3>Basic</h3>
-        <p>Landing page or simple web application.</p>
-        <div class="price">€490</div>
-        <p class="muted">Clean UI · Responsive · Fast delivery</p>
-      </div>
+    <div class="card">
+      <h3>Standard</h3>
+      <p>Business web application.</p>
+      <div class="price">€2,400</div>
+    </div>
 
-      <div class="card">
-        <h3>Standard</h3>
-        <p>Business-focused web application.</p>
-        <div class="price">€2,400</div>
-        <p class="muted">Dashboard · Automation · Scalable</p>
-      </div>
-
-      <div class="card">
-        <h3>Premium</h3>
-        <p>Advanced AI-powered custom platform.</p>
-        <div class="price">€4,900</div>
-        <p class="muted">AI · Custom architecture · High performance</p>
-      </div>
-
+    <div class="card">
+      <h3>Premium</h3>
+      <p>Advanced AI-powered platform.</p>
+      <div class="price">€4,900</div>
     </div>
   </section>
-
 </main>
 
 <script>
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-menu");
-
   hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("open");
   });
