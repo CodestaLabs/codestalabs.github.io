@@ -1,162 +1,153 @@
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg-page:#f1f3f6;
+  --bg-header:#e3e6ea;
+  --text-main:#111827;
+  --text-muted:#4b5563;
+  --accent:#2563eb;
 }
 
-/* COLORS */
-:root {
-  --bg-page: #f1f3f6;     /* nötr açık gri */
-  --bg-header: #e3e6ea;   /* navbar gri */
-  --text-main: #111827;   /* siyah */
-  --text-muted: #4b5563;
-  --accent: #2563eb;     /* sadece CTA mavi */
+body{
+  font-family:system-ui,-apple-system,sans-serif;
+  background:var(--bg-page);
+  color:var(--text-main);
 }
 
-/* BASE */
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: var(--bg-page);
-  color: var(--text-main);
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:24px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px;
+.header{
+  background:var(--bg-header);
+  border-bottom:1px solid rgba(0,0,0,.1);
 }
 
-/* HEADER */
-.header {
-  background: var(--bg-header);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+.navbar{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
 }
 
-.navbar {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* SOL | ORTA | SAĞ */
-  align-items: center;
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
-/* LEFT */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.logo{
+  font-size:1.6rem;
+  font-weight:800;
 }
 
-/* LOGO */
-.logo {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--text-main);
+.nav-center{
+  display:flex;
+  justify-content:center;
+  gap:40px;
 }
 
-/* CENTER */
-.nav-center {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+.nav-center a{
+  text-decoration:none;
+  color:var(--text-muted);
 }
 
-.nav-center a {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-weight: 500;
+.nav-center a:hover{
+  color:var(--text-main);
 }
 
-.nav-center a:hover {
-  color: var(--text-main);
+.cta{
+  background:var(--accent);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
 }
 
-/* RIGHT */
-.nav-right {
-  display: flex;
-  justify-content: flex-end;
+.hamburger{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
 }
 
-/* CTA */
-.cta {
-  padding: 10px 18px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:var(--text-main);
+  margin:5px 0;
 }
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
+.mobile-menu{
+  display:none;
+  flex-direction:column;
+  background:var(--bg-header);
 }
 
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--text-main);
-  margin: 5px 0;
+.mobile-menu a{
+  padding:16px 24px;
+  text-decoration:none;
+  color:var(--text-main);
+  border-top:1px solid rgba(0,0,0,.05);
 }
 
-/* MOBILE MENU */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: var(--bg-header);
+.hero{
+  padding:80px 0;
 }
 
-.mobile-menu a {
-  padding: 16px 24px;
-  text-decoration: none;
-  color: var(--text-main);
-  border-top: 1px solid rgba(0,0,0,0.05);
+.hero h1{
+  font-size:3rem;
+  margin-bottom:16px;
 }
 
-.mobile-menu .cta {
-  margin: 16px;
-  text-align: center;
+.hero p{
+  color:var(--text-muted);
+  max-width:600px;
 }
 
-/* HERO */
-.hero {
-  padding: 80px 0;
+.track{
+  display:flex;
+  gap:24px;
+  margin-top:40px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  max-width: 800px;
-  margin-bottom: 16px;
+.card{
+  background:#fff;
+  padding:32px;
+  border-radius:16px;
+  width:300px;
 }
 
-.hero p {
-  max-width: 600px;
-  color: var(--text-muted);
-  font-size: 1.1rem;
+.price{
+  margin-top:12px;
+  font-weight:700;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .nav-center {
-    display: none;
-  }
+.form{
+  max-width:500px;
+  background:#fff;
+  padding:32px;
+  border-radius:16px;
+}
 
-  .nav-right {
-    display: none;
-  }
+.form input,
+.form textarea{
+  width:100%;
+  margin-bottom:16px;
+  padding:12px;
+}
 
-  .hamburger {
-    display: block;
-  }
+@media(max-width:768px){
+  .nav-center,
+  .nav-right{display:none}
 
-  .logo {
-    font-size: 1.4rem;
-  }
+  .hamburger{display:block}
 
-  .mobile-menu.open {
-    display: flex;
+  .mobile-menu.open{display:flex}
+
+  .track{
+    flex-direction:column;
   }
 }
