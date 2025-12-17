@@ -27,14 +27,14 @@ body{
 
 .navbar{
   display:grid;
-  grid-template-columns:auto 1fr auto;
+  grid-template-columns:auto 1fr auto auto;
   align-items:center;
+  position:relative;
 }
 
 .nav-left{
   display:flex;
   align-items:center;
-  gap:14px;
 }
 
 .logo{
@@ -139,15 +139,35 @@ body{
   padding:12px;
 }
 
+/* 🔥 MOBİL FIX – İSTEDİĞİN ŞEY */
 @media(max-width:768px){
   .nav-center,
-  .nav-right{display:none}
+  .nav-right{
+    display:none;
+  }
 
-  .hamburger{display:block}
+  .hamburger{
+    display:block;
+    position:absolute;
+    right:24px;
+  }
 
-  .mobile-menu.open{display:flex}
+  .nav-left{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  .mobile-menu.open{
+    display:flex;
+  }
 
   .track{
     flex-direction:column;
+  }
+}
+@media (max-width:768px){
+  .navbar{
+    min-height:64px;
   }
 }
