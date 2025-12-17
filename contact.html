@@ -13,9 +13,6 @@
   <div class="container navbar">
 
     <div class="nav-left">
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
       <span class="logo">CodestaLabs</span>
     </div>
 
@@ -27,6 +24,10 @@
     <div class="nav-right">
       <a href="contact.html" class="cta">Contact</a>
     </div>
+
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 
   </div>
 
@@ -56,6 +57,7 @@
 <script>
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-menu");
+
   hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("open");
   });
@@ -63,4 +65,3 @@
 
 </body>
 </html>
-
